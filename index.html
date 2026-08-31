@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F2EEE4">
+
+  <title>bottega01 — Real problems. Essential software.</title>
+  <meta name="description" content="bottega01 designs and builds digital products that start from real situations. Design, code, product. Made in Italy.">
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://www.bottega01.com/">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta property="og:url" content="https://www.bottega01.com/">
+  <meta property="og:image" content="https://www.bottega01.com/icons/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="bottega01">
+  <meta name="twitter:description" content="Ogni app \u00e8 fatta per il momento in cui conta davvero.">
+  <meta name="twitter:image" content="https://www.bottega01.com/icons/og-image.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="bottega01">
+  <meta property="og:description" content="Every app is built for the moment that actually counts.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="it_IT">
+
+  <!-- IBM Plex Sans + Mono, SIL Open Font License 1.1, serviti da questo repo.
+       Nessuna chiamata a server esterni: nessun IP dei visitatori esce da qui. -->
+  <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/ibm-plex-sans-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-sans-latin-ext-400-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+    @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/ibm-plex-sans-latin-ext-500-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+    @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/ibm-plex-sans-latin-ext-600-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+    @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  </style>
+
+  <style>
+    :root{
+      --ink:#171715;
+      --paper:#F2EEE4;
+      --accent:#D65332;
+      --muted:#716B62;
+      --line:rgba(23,23,21,.18);
+      --line-strong:rgba(23,23,21,.62);
+      --sans:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+      --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+      --content:1280px;
+      --gutter:clamp(20px,4vw,56px);
+      --section-y:clamp(78px,9vw,132px);
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;min-width:320px;background:var(--paper);color:var(--ink);
+      font-family:var(--sans);font-size:16px;line-height:1.5;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility
+    }
+    a{color:inherit}
+    button{font:inherit}
+    svg{display:block;max-width:100%}
+    ::selection{background:var(--accent);color:var(--paper)}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+
+    .skip{
+      position:fixed;z-index:100;top:12px;left:12px;padding:10px 14px;
+      background:var(--ink);color:var(--paper);text-decoration:none;
+      font-family:var(--mono);font-size:12px;transform:translateY(-160%)
+    }
+    .skip:focus{transform:translateY(0)}
+
+    .site{width:min(100%,var(--content));margin:auto;padding-inline:var(--gutter)}
+
+    /* BRAND */
+    .brand{display:inline-flex;align-items:center;gap:13px;text-decoration:none}
+    .brand__mark{width:34px;height:auto;color:var(--ink);flex:none}
+    .brand__name{font-size:18px;font-weight:500;letter-spacing:-.035em;line-height:1;white-space:nowrap}
+    .brand__name sup{
+      position:relative;top:-.22em;margin-left:.08em;color:var(--accent);
+      font-family:var(--mono);font-size:.56em;font-weight:500;letter-spacing:-.04em
+    }
+
+    /* HEADER */
+    .header{
+      min-height:92px;display:flex;align-items:center;justify-content:space-between;
+      gap:28px;border-bottom:1px solid var(--line)
+    }
+    .header__right{display:flex;align-items:center;gap:clamp(22px,3vw,44px)}
+    .nav{display:flex;gap:clamp(18px,2.4vw,34px)}
+    .nav a{
+      padding-block:10px;text-decoration:none;font-family:var(--mono);
+      font-size:11px;letter-spacing:.08em;text-transform:uppercase
+    }
+    .nav a:hover{color:var(--accent)}
+    .language{display:flex;align-items:center;gap:4px;padding-left:18px;border-left:1px solid var(--line)}
+    .language button{
+      border:0;background:none;color:var(--muted);font-family:var(--mono);
+      font-size:11px;letter-spacing:.07em;padding:8px 5px;cursor:pointer
+    }
+    .language button[aria-pressed="true"]{color:var(--ink)}
+    .language span{color:var(--line-strong);font-size:11px}
+
+    /* EDITORIAL LABEL */
+    .eyebrow{
+      display:flex;align-items:center;gap:9px;color:var(--muted);
+      font-family:var(--mono);font-size:11px;line-height:1.3;
+      letter-spacing:.09em;text-transform:uppercase
+    }
+    .eyebrow__num{color:var(--accent);font-weight:500}
+    .eyebrow__rule{width:28px;height:1px;background:var(--line-strong);flex:none}
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.58fr);
+      column-gap:clamp(54px,7vw,110px);align-items:center;
+      min-height:min(800px,calc(100vh - 92px));
+      padding-block:clamp(70px,8vw,112px);border-bottom:1px solid var(--line)
+    }
+    .hero h1{
+      margin:30px 0;max-width:10.8ch;font-size:clamp(64px,7.25vw,108px);
+      line-height:.92;letter-spacing:-.064em;font-weight:500;text-wrap:balance
+    }
+    .hero h1 em{color:var(--accent);font-style:normal}
+    .hero__lede{
+      margin:0;max-width:50ch;color:#3F3B35;
+      font-size:clamp(17px,1.4vw,20px);line-height:1.58
+    }
+    .hero__meta{
+      display:flex;flex-wrap:wrap;gap:9px 28px;max-width:620px;
+      margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
+      color:var(--muted);font-family:var(--mono);font-size:11px;
+      letter-spacing:.05em;text-transform:uppercase
+    }
+    .specimen{
+      align-self:stretch;display:flex;align-items:center;justify-content:center;
+      min-width:0;padding-left:clamp(34px,4vw,64px);border-left:1px solid var(--line)
+    }
+    .specimen__mark{width:min(100%,260px);height:auto;color:var(--ink)}
+
+    /* APP CATALOGUE */
+    .catalogue{padding-block:var(--section-y) 30px}
+    .section-head{
+      display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.38fr);
+      gap:40px;align-items:end;padding-bottom:30px;border-bottom:1px solid var(--ink)
+    }
+    .section-head h2{
+      margin:18px 0 0;max-width:14ch;font-size:clamp(42px,5.2vw,72px);
+      line-height:.97;letter-spacing:-.055em;font-weight:500;text-wrap:balance
+    }
+    .section-head__note{
+      margin:0 0 4px;max-width:39ch;color:var(--muted);
+      font-size:15px;line-height:1.55
+    }
+    .app{
+      display:grid;grid-template-columns:68px minmax(0,1.55fr) minmax(250px,.68fr) 26px;
+      gap:clamp(22px,3vw,44px);align-items:end;
+      padding-block:clamp(36px,4.5vw,58px);border-bottom:1px solid var(--line)
+    }
+    .app__num{
+      align-self:start;padding-top:.4em;color:var(--accent);
+      font-family:var(--mono);font-size:11px;letter-spacing:.08em
+    }
+    .app__moment{
+      margin:0;max-width:25ch;font-size:clamp(27px,3vw,44px);
+      line-height:1.07;letter-spacing:-.038em;font-weight:400;text-wrap:balance
+    }
+    .app__meta{
+      display:grid;
+      grid-template-columns:72px minmax(0,1fr);
+      gap:18px;
+      align-items:start
+    }
+    .app__icon-shell{
+      position:relative;
+      width:72px;
+      aspect-ratio:1;
+      overflow:hidden;
+      border-radius:17px;
+      background:rgba(23,23,21,.055);
+      border:1px solid rgba(23,23,21,.08)
+    }
+    .app__icon{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      opacity:0;
+      transition:opacity .22s ease
+    }
+    .app__icon.is-loaded{opacity:1}
+    .app__icon-fallback{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      color:var(--muted);
+      font-family:var(--mono);
+      font-size:13px;
+      letter-spacing:.06em
+    }
+    .app__icon.is-loaded + .app__icon-fallback{display:none}
+    .app__product{min-width:0}
+    .app__name{font-size:19px;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+    .app__desc{margin-top:9px;color:var(--muted);font-size:14px;line-height:1.52}
+    .app__link{
+      display:inline-flex;align-items:center;gap:7px;margin-top:16px;
+      padding-bottom:2px;border-bottom:1px solid var(--accent);
+      font-family:var(--mono);font-size:11px;letter-spacing:.035em;
+      text-decoration:none;text-transform:uppercase
+    }
+    .app__link:hover{color:var(--accent)}
+    .app__arrow{
+      align-self:center;justify-self:end;color:var(--muted);
+      font-family:var(--mono);font-size:17px
+    }
+
+    /* METHOD */
+    .method{
+      margin-top:clamp(86px,10vw,150px);padding:clamp(48px,6vw,84px);
+      background:var(--ink);color:var(--paper)
+    }
+    .method .eyebrow{color:rgba(242,238,228,.62)}
+    .method .eyebrow__rule{background:rgba(242,238,228,.45)}
+    .method__grid{
+      display:grid;grid-template-columns:minmax(0,.34fr) minmax(0,1fr);
+      gap:clamp(42px,7vw,110px);margin-top:54px
+    }
+    .method__origin{
+      color:rgba(242,238,228,.62);font-family:var(--mono);
+      font-size:12px;line-height:1.65;letter-spacing:.07em;text-transform:uppercase
+    }
+    .method__origin strong{display:block;color:var(--paper);font-weight:500;margin-bottom:8px}
+    .method__copy p{
+      margin:0;max-width:17ch;font-size:clamp(36px,4.5vw,66px);
+      line-height:1.02;letter-spacing:-.05em;font-weight:400;text-wrap:balance
+    }
+    .method__copy p+p{margin-top:22px}
+    .method__copy .accent{color:#F06C49}
+    .method__small{
+      max-width:59ch!important;margin-top:40px!important;
+      color:rgba(242,238,228,.72);font-size:16px!important;
+      line-height:1.64!important;letter-spacing:0!important
+    }
+
+    /* CONTACT */
+    .contact{padding-block:clamp(68px,8vw,108px) 38px}
+    .contact__grid{
+      display:grid;grid-template-columns:minmax(0,1fr) auto;
+      gap:50px;align-items:end
+    }
+    .contact__title{
+      margin:20px 0 0;max-width:25ch;font-size:clamp(28px,3vw,44px);
+      line-height:1.08;letter-spacing:-.04em;font-weight:400
+    }
+    .contact__mail{
+      display:inline-block;margin-top:18px;color:var(--accent);
+      font-family:var(--mono);font-size:13px;text-decoration:none;
+      border-bottom:1px solid currentColor
+    }
+    .contact__aside{
+      color:var(--muted);font-family:var(--mono);font-size:10px;
+      line-height:1.65;letter-spacing:.07em;text-align:right;text-transform:uppercase
+    }
+    .footer{
+      display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;
+      margin-top:54px;padding-top:18px;border-top:1px solid var(--line);
+      color:var(--muted);font-family:var(--mono);font-size:10px;
+      letter-spacing:.05em;text-transform:uppercase
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:980px){
+      .hero{grid-template-columns:minmax(0,1fr) minmax(240px,.45fr);column-gap:42px}
+      .specimen{padding-left:32px}
+      .section-head{grid-template-columns:1fr}
+      .section-head__note{max-width:54ch}
+      .app{grid-template-columns:50px minmax(0,1fr) minmax(220px,.7fr)}
+      .app__arrow{display:none}
+    }
+    @media(max-width:780px){
+      .header{min-height:78px}
+      .brand__mark{width:29px}.brand__name{font-size:16px}
+      .nav{display:none}
+      .hero{display:block;min-height:0;padding-block:clamp(54px,10vw,76px)}
+      .hero h1{
+        max-width:9.8ch;margin-top:26px;
+        font-size:clamp(50px,12vw,66px);line-height:.94;letter-spacing:-.06em
+      }
+      .hero__lede{max-width:40ch;font-size:16px}
+      .hero__meta{margin-top:32px;padding-top:15px}
+      .specimen{display:none}
+      .catalogue{padding-top:76px}
+      .section-head h2{max-width:11ch;font-size:clamp(38px,9vw,56px)}
+      .app{grid-template-columns:42px minmax(0,1fr);gap:18px;padding-block:36px}
+      .app__moment{max-width:22ch;font-size:clamp(28px,7.3vw,38px)}
+      .app__meta{grid-column:2}.app__desc{max-width:48ch}
+      .app__icon-shell{width:60px;border-radius:14px}
+      .app__meta{grid-template-columns:60px minmax(0,1fr);gap:16px}
+      .method{margin-inline:calc(var(--gutter) * -1);padding-inline:var(--gutter)}
+      .method__grid{grid-template-columns:1fr;gap:34px}
+      .method__copy p{max-width:13ch}
+      .contact__grid{grid-template-columns:1fr}
+      .contact__aside{text-align:left}
+    }
+    @media(max-width:430px){
+      :root{--gutter:20px}
+      .header__right{gap:10px}.language{padding-left:12px}
+      .hero h1{max-width:10.4ch;font-size:clamp(48px,13.8vw,59px)}
+      .hero__meta{display:grid;grid-template-columns:1fr;gap:5px}
+      .section-head h2{font-size:42px}
+      .app{grid-template-columns:34px 1fr}
+      .app__moment{font-size:31px}
+      .app__icon-shell{width:54px;border-radius:13px}
+      .app__meta{grid-template-columns:54px minmax(0,1fr);gap:14px}
+      .method__copy p{font-size:39px}
+    }
+    @media(hover:hover){
+      .brand,.nav a,.app__link,.contact__mail{transition:opacity .18s ease,color .18s ease}
+      .brand:hover{opacity:.72}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{transition:none!important}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"bottega01",
+    "description":"Design e sviluppo di prodotti digitali. Fatto in Italia."
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main" data-copy="skip">Skip to content</a>
+
+  <!-- Approved "Due Moduli" mark. Defined once, reused everywhere. -->
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+    <symbol id="brand-mark" viewBox="0 0 100 142">
+      <circle cx="31" cy="29" r="29" fill="currentColor"/>
+      <path d="M2 66H37A37 37 0 0 1 37 140H2Z" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <div class="site">
+    <header class="header">
+      <a class="brand" href="#top" aria-label="bottega01 — home">
+        <svg class="brand__mark" viewBox="0 0 100 142" aria-hidden="true"><use href="#brand-mark"/></svg>
+        <span class="brand__name">bottega<sup>01</sup></span>
+      </a>
+
+      <div class="header__right">
+        <nav class="nav" aria-label="Navigazione principale">
+          <a href="#app" data-copy="navApps">Apps</a>
+          <a href="#metodo" data-copy="navMethod">Method</a>
+          <a href="#contatti" data-copy="navContact">Contact</a>
+        </nav>
+        <div class="language" aria-label="Lingua">
+          <button type="button" data-lang="it" aria-pressed="false">IT</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow__num">01</span>
+            <span class="eyebrow__rule" aria-hidden="true"></span>
+            <span data-copy="heroEyebrow">Digital products / made in Italy</span>
+          </div>
+
+          <h1 id="hero-title">
+            <span data-copy="heroA">Every app is made for the moment when it</span>
+            <em data-copy="heroB">really matters.</em>
+          </h1>
+
+          <p class="hero__lede" data-copy="heroLead">We design and build apps from real situations. Every choice — feature, word, interaction — needs a reason to be there.</p>
+
+          <div class="hero__meta">
+            <span>Design / Code / Product</span>
+            <span data-copy="madeInItaly">Made in Italy</span>
+          </div>
+        </div>
+
+        <aside class="specimen" aria-label="Marchio bottega01">
+          <svg class="specimen__mark" viewBox="0 0 100 142" aria-hidden="true"><use href="#brand-mark"/></svg>
+        </aside>
+      </section>
+
+      <section class="catalogue" id="app" aria-labelledby="apps-title">
+        <header class="section-head">
+          <div>
+            <div class="eyebrow">
+              <span class="eyebrow__num">01</span>
+              <span class="eyebrow__rule" aria-hidden="true"></span>
+              <span data-copy="appsKicker">Apps</span>
+            </div>
+            <h2 id="apps-title" data-copy="appsTitle">The moment each one exists for.</h2>
+          </div>
+          <p class="section-head__note" data-copy="appsNote">Every project starts with a real need. Everything else comes after.</p>
+        </header>
+
+        <!--
+          IMPORTANT FOR MAINTENANCE:
+          The app rows are generated from APP_CATALOG below.
+          To add an app, add ONE object to that array. Do not edit this HTML.
+        -->
+        <div id="app-list"></div>
+      </section>
+
+      <section class="method" id="metodo" aria-labelledby="method-title">
+        <div class="eyebrow">
+          <span class="eyebrow__num">02</span>
+          <span class="eyebrow__rule" aria-hidden="true"></span>
+          <span data-copy="methodKicker">Bottega</span>
+        </div>
+
+        <div class="method__grid">
+          <div class="method__origin">
+            <strong data-copy="madeInItaly">Made in Italy</strong>
+            <span>Design / Code / Product</span>
+          </div>
+
+          <div class="method__copy">
+            <p id="method-title" data-copy="methodA">Every feature has to earn its place.</p>
+            <p class="accent" data-copy="methodB">Design does not add. It decides what to remove.</p>
+            <p class="method__small" data-copy="methodSmall">We start with the problem, reduce the noise, design the interaction and build the software. No technology for fashion’s sake: only what genuinely improves the product.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="contact" id="contatti" aria-labelledby="contact-title">
+      <div class="contact__grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow__num">03</span>
+            <span class="eyebrow__rule" aria-hidden="true"></span>
+            <span data-copy="contactKicker">Contact</span>
+          </div>
+          <p class="contact__title" id="contact-title" data-copy="contactTitle">Found a problem? Have an idea worth building?</p>
+          <a class="contact__mail" data-site-email href="mailto:hello@bottega01.com">hello@bottega01.com</a>
+        </div>
+
+        <div class="contact__aside">
+          <div>bottega01</div>
+          <div data-copy="madeInItaly">Made in Italy</div>
+          <div>© <span id="year"></span></div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span data-copy="footerLine">Real problems. Essential software.</span>
+        <span>bottega01</span>
+      </footer>
+    </section>
+  </div>
+
+  <script>
+    /*
+      ============================================================
+      CONTENT CONFIGURATION
+      ============================================================
+
+      This is the only area that normally needs editing.
+
+      To add an app:
+      1. copy one object inside APP_CATALOG;
+      2. set appId, name, store URL and IT/EN texts;
+      3. save.
+
+      The official icon is resolved automatically from Apple using appId.
+      Numbering is automatic. No app count is hard-coded anywhere.
+    */
+
+    const SITE = {
+      email: "hello@bottega01.com",
+
+    };
+
+    const APP_CATALOG = [
+      {
+        name:"Vola con Lino",
+        appId:"6788307076",
+        icon:"lino.png",
+        store:"https://apps.apple.com/app/id6788307076",
+        it:{
+          moment:"Si accende la cintura e ti si gelano le mani.",
+          desc:"Previsioni di turbolenza e strumenti per affrontare il volo con maggiore consapevolezza."
+        },
+        en:{
+          moment:"The seatbelt sign comes on and your hands go cold.",
+          desc:"Turbulence forecasts and tools to approach the flight with greater awareness."
+        }
+      },
+      {
+        name:"Codicino",
+        appId:"6791566010",
+        icon:"codicino.png",
+        store:"https://apps.apple.com/app/id6791566010",
+        it:{
+          moment:"Un bambino vuole un segreto che solo il suo amico sappia leggere.",
+          desc:"Cifrari veri trasformati in un’esperienza pensata per i più piccoli. Tutto offline."
+        },
+        en:{
+          moment:"A child wants a secret only their friend can read.",
+          desc:"Real ciphers turned into an experience designed for children. Fully offline."
+        }
+      },
+      {
+        name:"Gustavo",
+        appId:"6784707961",
+        icon:"gustavo.png",
+        store:"https://apps.apple.com/app/id6784707961",
+        it:{
+          moment:"Arriva il menù e vuoi capire cosa stai davvero scegliendo.",
+          desc:"Dalla foto del menù a una stima nutrizionale, con strumenti utili anche quando cucini tu."
+        },
+        en:{
+          moment:"The menu arrives and you want to understand what you are really choosing.",
+          desc:"From a menu photo to a nutritional estimate, with useful tools for when you cook too."
+        }
+      },
+      {
+        name:"CentoZeri",
+        appId:"6791565354",
+        icon:"centozeri.png",
+        store:"https://apps.apple.com/app/id6791565354",
+        it:{
+          moment:"Qualcuno ti chiede quanto è grande davvero un numero con cento zeri.",
+          desc:"Numeri enormi resi comprensibili, una scala alla volta."
+        },
+        en:{
+          moment:"Someone asks how big a number with a hundred zeros really is.",
+          desc:"Enormous numbers made understandable, one scale at a time."
+        }
+      },
+      {
+        name:"MyNotify+",
+        appId:"6758677143",
+        icon:"mynotify.png",
+        store:"https://apps.apple.com/app/id6758677143",
+        it:{
+          moment:"Sono le sei e quella cosa importante non può semplicemente aspettare.",
+          desc:"Promemoria flessibili per ciò che deve davvero arrivare al momento giusto."
+        },
+        en:{
+          moment:"It’s six o’clock and that important thing cannot simply wait.",
+          desc:"Flexible reminders for what really needs to arrive at the right moment."
+        }
+      }
+    ];
+
+    const COPY = {
+      it:{
+        skip:"Vai al contenuto",
+        navApps:"App",navMethod:"Metodo",navContact:"Contatti",
+        heroEyebrow:"Prodotti digitali / fatti in Italia",
+        heroA:"Ogni app è fatta per il momento in cui",
+        heroB:"conta davvero.",
+        heroLead:"Progettiamo e sviluppiamo app partendo da situazioni reali. Ogni scelta — funzione, testo, interazione — deve avere un motivo per esserci.",
+        madeInItaly:"Fatto in Italia",
+        appsKicker:"App",
+        appsTitle:"Il momento per cui esistono.",
+        appsNote:"Ogni progetto nasce da un bisogno concreto. Il resto viene dopo.",
+        store:"Vedi su App Store",
+        methodKicker:"Bottega",
+        methodA:"Ogni funzione deve meritarsi il suo posto.",
+        methodB:"Il design non aggiunge. Decide cosa togliere.",
+        methodSmall:"Partiamo dal problema, riduciamo il rumore, progettiamo l’interazione e costruiamo il software. Nessuna tecnologia per moda: solo quella che migliora davvero il prodotto.",
+        contactKicker:"Contatti",
+        contactTitle:"Hai trovato un problema? Hai un’idea che vale la pena costruire?",
+        footerLine:"Problemi reali. Software essenziale."
+      },
+      en:{
+        skip:"Skip to content",
+        navApps:"Apps",navMethod:"Method",navContact:"Contact",
+        heroEyebrow:"Digital products / made in Italy",
+        heroA:"Every app is made for the moment when it",
+        heroB:"really matters.",
+        heroLead:"We design and build apps from real situations. Every choice — feature, word, interaction — needs a reason to be there.",
+        madeInItaly:"Made in Italy",
+        appsKicker:"Apps",
+        appsTitle:"The moment each one exists for.",
+        appsNote:"Every project starts with a real need. Everything else comes after.",
+        store:"View on the App Store",
+        methodKicker:"Bottega",
+        methodA:"Every feature has to earn its place.",
+        methodB:"Design does not add. It decides what to remove.",
+        methodSmall:"We start with the problem, reduce the noise, design the interaction and build the software. No technology for fashion’s sake: only what genuinely improves the product.",
+        contactKicker:"Contact",
+        contactTitle:"Found a problem? Have an idea worth building?",
+        footerLine:"Real problems. Essential software."
+      }
+    };
+
+    const appList = document.getElementById("app-list");
+    const langButtons = [...document.querySelectorAll("[data-lang]")];
+
+    function appNumber(index){
+      return String(index + 1).padStart(2,"0");
+    }
+
+    function escapeHTML(value){
+      return String(value)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
+
+    /*
+      ICONE DELLE APP
+      ---------------
+      I file stanno in icons/ dentro questo repo: nessuna chiamata a server
+      esterni, nessun IP dei visitatori inviato ad Apple, e le icone si vedono
+      anche senza JavaScript attivo.
+
+      Per aggiungere un'app: esporta l'icona a 512px da Xcode, salvala come
+      icons/NOME.png e metti quel nome nel campo "icon" del catalogo.
+      Se il file manca, resta la sigla a due lettere e non si rompe nulla.
+    */
+
+    function renderApps(lang){
+      const t = COPY[lang] || COPY.en;
+
+      appList.innerHTML = APP_CATALOG.map((app,index)=>{
+        const local = app[lang] || app.it;
+        const n = appNumber(index);
+
+        return `
+          <article class="app">
+            <div class="app__num">${n}</div>
+
+            <p class="app__moment">${escapeHTML(local.moment)}</p>
+
+            <div class="app__meta">
+              <div class="app__icon-shell" aria-hidden="true">
+                <img
+                  class="app__icon"
+                  src="icons/${escapeHTML(app.icon)}"
+                  alt=""
+                  width="144"
+                  height="144"
+                  loading="lazy"
+                  decoding="async"
+                  onload="this.classList.add('is-loaded')"
+                  onerror="this.classList.remove('is-loaded')">
+                <span class="app__icon-fallback">${escapeHTML(app.name.slice(0,2).toUpperCase())}</span>
+              </div>
+
+              <div class="app__product">
+                <div class="app__name">${escapeHTML(app.name)}</div>
+                <div class="app__desc">${escapeHTML(local.desc)}</div>
+                <a class="app__link"
+                   href="${escapeHTML(app.store)}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  ${escapeHTML(t.store)} <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="app__arrow" aria-hidden="true">↗</div>
+          </article>
+        `;
+      }).join("");
+
+    }
+
+    function setLanguage(lang){
+      const t = COPY[lang] || COPY.en;
+
+      const ogLocale = document.querySelector('meta[property="og:locale"]');
+      if(ogLocale) ogLocale.setAttribute("content", lang === "it" ? "it_IT" : "en_US");
+
+      document.querySelectorAll("[data-copy]").forEach(node=>{
+        const key=node.dataset.copy;
+        if(t[key]) node.textContent=t[key];
+      });
+
+      document.documentElement.lang=lang;
+      langButtons.forEach(btn=>{
+        btn.setAttribute("aria-pressed",String(btn.dataset.lang===lang));
+      });
+
+      renderApps(lang);
+
+      try{localStorage.setItem("b01-language",lang)}catch(_){}
+    }
+
+    document.querySelectorAll("[data-site-email]").forEach(node=>{
+      node.textContent=SITE.email;
+      node.href=`mailto:${SITE.email}`;
+    });
+
+    document.getElementById("year").textContent=new Date().getFullYear();
+
+    let initial="en";
+    try{
+      initial=localStorage.getItem("b01-language")
+        || ((navigator.language||"en").toLowerCase().startsWith("it") ? "it" : "en");
+    }catch(_){}
+
+    setLanguage(initial);
+    langButtons.forEach(btn=>btn.addEventListener("click",()=>setLanguage(btn.dataset.lang)));
+  </script>
+</body>
+</html>

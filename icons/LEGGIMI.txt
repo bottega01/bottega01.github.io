@@ -1,0 +1,20 @@
+ICONE — cosa mettere in questa cartella
+=======================================
+
+Esporta da Xcode l'icona di ogni app a 512x512 px (o 1024, va bene lo stesso)
+e salvala qui con ESATTAMENTE questi nomi:
+
+  lino.png        Vola con Lino
+  codicino.png    Codicino
+  gustavo.png     Gustavo
+  centozeri.png   CentoZeri
+  mynotify.png    MyNotify+
+
+Servono anche, quando li hai:
+
+  favicon.svg          l'icona nella linguetta del browser
+  apple-touch-icon.png  180x180 px, per chi salva il sito sulla home dell'iPhone
+  og-image.png          1200x630 px, l'anteprima quando condividi il link
+
+Finche' un file manca non si rompe niente: al posto dell'icona resta la sigla
+a due lettere, e il sito funziona lo stesso.
