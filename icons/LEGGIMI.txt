@@ -4,11 +4,11 @@ ICONE — cosa mettere in questa cartella
 Esporta da Xcode l'icona di ogni app a 512x512 px (o 1024, va bene lo stesso)
 e salvala qui con ESATTAMENTE questi nomi:
 
-  lino.png        Vola con Lino
-  codicino.png    Codicino
-  gustavo.png     Gustavo
-  centozeri.png   CentoZeri
-  mynotify.png    MyNotify+
+  lino.jpg        Vola con Lino
+  codicino.jpg    Codicino
+  gustavo.jpg     Gustavo
+  centozeri.jpg   CentoZeri
+  mynotify.jpg    MyNotify+
 
 Servono anche, quando li hai:
 
